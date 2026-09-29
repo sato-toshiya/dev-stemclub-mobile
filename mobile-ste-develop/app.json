@@ -1,0 +1,121 @@
+{
+  "name": "すてむくらぶ",
+  "slug": "Scratch",
+  "scheme": "scratch",
+  "version": "1.0.0",
+  "orientation": "landscape",
+  "userInterfaceStyle": "automatic",
+  "icon": "./assets/images/app-icon-all.png",
+  "updates": {
+    "fallbackToCacheTimeout": 0
+  },
+  "newArchEnabled": true,
+  "jsEngine": "hermes",
+  "assetBundlePatterns": [
+    "public/ScratchJr/static/**/*",
+    "public/python/**/*"
+  ],
+  "android": {
+    "icon": "./assets/images/app-icon-android-legacy.png",
+    "package": "com.ste.jp",
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/images/app-icon-android-adaptive-foreground.png",
+      "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
+    },
+    "allowBackup": false,
+    "edgeToEdgeEnabled": true
+  },
+  "ios": {
+    "requireFullScreen": true,
+    "icon": "./assets/images/app-icon-all.png",
+    "supportsTablet": true,
+    "bundleIdentifier": "com.ste.jp",
+    "infoPlist": {
+      "NSCameraUsageDescription": "本アプリは、安全にログインするためにQRコードをスキャンする目的でカメラを使用します。カメラはスキャン時にのみ使用され、画像や動画が保存されることはありません。",
+      "NSMicrophoneUsageDescription": "本アプリは、キャラクター機能で音声を録音するためにマイクを使用します。録音は該当機能を使用する場合にのみ行われ、バックグラウンドで録音されることはありません。",
+      "UISupportedInterfaceOrientations": [
+        "UIInterfaceOrientationLandscapeLeft",
+        "UIInterfaceOrientationLandscapeRight",
+        "UIInterfaceOrientationLandscapeLeft",
+        "UIInterfaceOrientationLandscapeRight"
+      ],
+      "UISupportedInterfaceOrientations~ipad": [
+        "UIInterfaceOrientationLandscapeRight",
+        "UIInterfaceOrientationLandscapeLeft",
+        "UIInterfaceOrientationLandscapeRight",
+        "UIInterfaceOrientationLandscapeLeft"
+      ],
+      "UIFileSharingEnabled": true,
+      "LSSupportsOpeningDocumentsInPlace": true,
+      "ITSAppUsesNonExemptEncryption": false
+    },
+    "privacyManifests": {
+      "NSPrivacyAccessedAPITypes": [
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "CA92.1"
+          ]
+        }
+      ]
+    }
+  },
+  "web": {
+    "favicon": "./assets/images/app-icon-web-favicon.png",
+    "bundler": "metro"
+  },
+  "plugins": [
+    "expo-localization",
+    [
+      "expo-camera",
+      {
+        "cameraPermission": "本アプリは、安全にログインするためにQRコードをスキャンする目的でカメラを使用します。カメラはスキャン時にのみ使用され、画像や動画が保存されることはありません。",
+        "microphonePermission": "本アプリは、キャラクター機能で音声を録音するためにマイクを使用します。録音は該当機能を使用する場合にのみ行われ、バックグラウンドで録音されることはありません。",
+        "recordAudioAndroid": true
+      }
+    ],
+    "expo-font",
+    [
+      "expo-splash-screen",
+      {
+        "image": "./assets/images/app-icon-all.png",
+        "imageWidth": 300,
+        "resizeMode": "contain",
+        "backgroundColor": "#F4CC9C",
+        "ios": {
+          "image": "./ignite/templates/splash-screen/logo.png"
+        }
+      }
+    ],
+    [
+      "react-native-edge-to-edge",
+      {
+        "android": {
+          "parentTheme": "Light",
+          "enforceNavigationBarContrast": false
+        }
+      }
+    ],
+    "expo-build-properties",
+    "expo-router",
+    [
+      "expo-screen-orientation",
+      {
+        "initialOrientation": "LANDSCAPE"
+      }
+    ]
+  ],
+  "experiments": {
+    "tsconfigPaths": true,
+    "typedRoutes": true
+  },
+  "extra": {
+    "ignite": {
+      "version": "11.3.2"
+    },
+    "router": {},
+    "eas": {
+      "projectId": "9fd1c27f-d4bc-413a-b97c-d87134ac40da"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "ios": {
+    "bundleIdentifier": "com.anonymous.scratchjr"
+  },
+  "android": {
+    "package": "com.anonymous.scratchjr"
+  }
+}

@@ -1,0 +1,19 @@
+node_modules
+ios
+android
+.expo
+.vscode
+ignite/ignite.json
+package.json
+.eslintignore
+# Public assets and third-party code
+public/
+# Generated files
+*.gen.ts
+*.gen.js
+# Build outputs
+build/
+dist/
+coverage/
+# Test files (if not needed)
+test/

@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+.dockerignore
+README.md
+*.md
+# src/ - commented out for debugging
+doc/
+test/
+other/
+# package.json - commented out for debugging
+# package-lock.json - commented out for debugging
+# webpack.config.js - commented out for debugging
+TRADEMARK
+

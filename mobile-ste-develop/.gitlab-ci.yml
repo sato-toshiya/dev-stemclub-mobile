@@ -1,0 +1,17 @@
+deploy_scratchjr_static_dev:
+  stage: deploy
+  image:
+    name: amazon/aws-cli:2.15.0
+    entrypoint: [""]
+
+  tags:
+    - scratch-staging
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+      changes:
+        - public/ScratchJr/static/**/*
+
+  script:
+    - aws s3 sync public/ScratchJr/static s3://$S3_BUCKET/$S3_PREFIX --delete
+    - aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths "/static/*"

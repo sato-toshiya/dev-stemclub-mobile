@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  scratchjr-static:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scratchjr-static
+    ports:
+      - "8080:8080"
+    volumes:
+      # Mount source files for live debugging
+      - ./src:/app/src
+      - ./static:/app/static
+      - ./webpack.config.js:/app/webpack.config.js
+      - ./package.json:/app/package.json
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=development
+      - PORT=8080
